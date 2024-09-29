@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import joblib
 import numpy as np
 import pandas as pd
+import autofeat
 
 def fet_sel(data):
     fsel_loaded = joblib.load('trained_feature_selector.joblib')
