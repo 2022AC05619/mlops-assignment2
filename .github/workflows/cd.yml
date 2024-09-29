@@ -31,7 +31,7 @@ jobs:
 
     - name: Deploy to Google Cloud Run
       run: |
-        gcloud run deploy wine-quality-prediction \
+        gcloud run deploy prediction-inference \
           --image gcr.io/${{ secrets.GCP_PROJECT }}/mlapp:$GITHUB_SHA \
           --platform managed \
           --region us-central1 \
@@ -39,7 +39,7 @@ jobs:
           
     - name: Set permissions for unauthenticated invocations
       run: |
-        gcloud run services add-iam-policy-binding wine-quality-prediction \
+        gcloud run services add-iam-policy-binding prediction-inference \
           --member="allUsers" \
           --role="roles/run.invoker" \
           --region us-central1 \
