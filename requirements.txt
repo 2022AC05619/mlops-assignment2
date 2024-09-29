@@ -5,3 +5,7 @@ pandas
 scikit-learn
 Flask
 joblib
+autofeat
+pycaret
+autofeat
+lime
